@@ -1,39 +1,39 @@
-# city-explorer-server
-
-# Project Name
-
+# Project Name -> city-explorer
 **Author**: Noor Hajbi
-**Version**: 
+**Version**: npm -v
+7.14.0
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
-
+This website:
+1. Shows a map for any city around the world besides its longitude and latitude
+2. Shows 3 days weather forecast for Amman city 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+A user should start using it from deployed link: 
+(here)[https://city-noor.netlify.app/]
 
 ## Architecture
+Technology used:
+JavaScript, HTML, CSS
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
+<!--:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+[axios](https://www.npmjs.com/package/axios)
+[locationiq](https://locationiq.com/docs#search-forward-geocoding)
+[class demo](https://github.com/LTUC/amman-301d20-react/tree/master/class-07/demo)
 
 
-Time Estimates
-For each of the lab features, make an estimate of the time it will take you to complete the feature, and record your start and finish times for that feature:
+Name of feature: Custom Servers with Node and Express
 
-Name of feature: Weather 
+Estimate of time needed to complete: 3
 
-Estimate of time needed to complete: 3 hours
+Start time: 3:00pm
 
-Start time: 3:30 pm
+Finish time: 7:00am
 
-Finish time: 3:30 am
-
-Actual time needed to complete: not sure, but longer than estimated
-
+Actual time needed to complete: more than 6 hours
 
 - **Finished After Lab review**
