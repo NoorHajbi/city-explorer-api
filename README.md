@@ -34,3 +34,6 @@ Start time: 3:30 pm
 Finish time: 3:30 am
 
 Actual time needed to complete: not sure, but longer than estimated
+
+
+- **Finished After Lab review**
