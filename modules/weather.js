@@ -1,6 +1,6 @@
 const axios = require('axios');
 const weatherKey = process.env.WEATHER_API_KEY;
-
+const cashObject = {}
 
 function weatherHandler(req, res) {
     // console.log(req.query)
@@ -14,10 +14,20 @@ function weatherHandler(req, res) {
     // console.log(cityData);
 
     const weatherbitURL = `https://api.weatherbit.io/v2.0/forecast/daily?city=${req.query.searchQuery}&key=${weatherKey}`;
+
+
     axios
         .get(weatherbitURL)
         .then(result => {
             let forecastArr = []
+            /******************* */
+            if (cashObject)
+                console.log('cache hit');
+            // query the API for a fresh result, add it to server 
+            // memory with the time of retrieval, and return the fresh result.
+            else
+                console.log('cache miss');
+            /**********************/
             // forecastArr.push(cityData.data.map(item => {
             forecastArr.push(result.data.data.map(item => {
                 return new Forecast(item);

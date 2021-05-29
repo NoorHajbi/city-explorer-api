@@ -25,16 +25,16 @@ JavaScript, HTML, CSS
 [locationiq](https://locationiq.com/docs#search-forward-geocoding)
 [class demo](https://github.com/LTUC/amman-301d20-react/tree/master/class-07/demo)
 
-lab 8 
+lab 10 
 
-Name of feature: Weather (live)
+Name of feature: Performance And 
 
-Estimate of time needed to complete: 3
+Estimate of time needed to complete: 2hours
 
-Start time: 3:00pm
+Start time: 10:00 pm
 
-Finish time: 7:00am
+Finish time: _____
 
-Actual time needed to complete: more than 6 hours
+Actual time needed to complete: _____
 
 - **Finished After Lab review**
