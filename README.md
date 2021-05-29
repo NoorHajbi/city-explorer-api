@@ -25,8 +25,9 @@ JavaScript, HTML, CSS
 [locationiq](https://locationiq.com/docs#search-forward-geocoding)
 [class demo](https://github.com/LTUC/amman-301d20-react/tree/master/class-07/demo)
 
+lab 8 
 
-Name of feature: Custom Servers with Node and Express
+Name of feature: Weather (live)
 
 Estimate of time needed to complete: 3
 

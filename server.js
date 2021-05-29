@@ -8,6 +8,8 @@ const axios = require('axios');
 const PORT = process.env.PORT // <=> const PORT = 3001;
 const server = express();
 server.use(cors()); //  make my server opened for anyone
+const weatherHandler = require('./modules/weather.js');
+
 
 
 
@@ -21,12 +23,7 @@ server.get('/test', (req, res) => {
     res.send('test')
 })
 
-class Forecast {
-    constructor(item) {
-        this.date = item.valid_date; //As a JSON-File
-        this.description = item.weather.description;
-    }
-}
+
 
 // Using each data point from the static data of the city that the user searched, 
 // create an array of `Forecast` objects, one for each day.
@@ -36,37 +33,18 @@ class Forecast {
 
 // http://localhost:3001/weather?searchQuery=Amman
 
-server.get('/weather', (req, res) => {
-    // console.log(req.query)
-    let cityData = weatherData.find(item => {
-        if (req.query.searchQuery.toLowerCase() == item.city_name.toLowerCase()
-            // && req.query.lat== item.lat 
-            // && req.query.lon ==  item.lon
-        )
-            return item;
+server.get('/weather',weatherHandler)
+
+      
+    server.get('*', (req, res) => { // * means all, so for errors we should put it in last
+        if (res.status(400))
+            res.send('Bad Request');
+        else if (res.status(404))
+            res.send('Not Found');
     })
-    console.log(cityData);
-    try {
-        let forecastArr = []
-        forecastArr.push(cityData.data.map(item => {
-            return new Forecast(item);
-        }))
-        res.send(forecastArr);
-    }
-    catch (error) {
-        res.status(500).send(`error in getting the weather data ==> ${error}`);
-    }
-})
-
-server.get('*', (req, res) => { // * means all, so for errors we should put it in last
-    if (res.status(400))
-        res.send('Bad Request');
-    else if (res.status(404))
-        res.send('Not Found');
-})
 
 
-server.listen(PORT, () => {
-    console.log(`Listening on PORT ${PORT}`)
-})
+    server.listen(PORT, () => {
+        console.log(`Listening on PORT ${PORT}`)
+    })
 
