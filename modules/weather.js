@@ -6,8 +6,8 @@ function weatherHandler(req, res) {
     // console.log(req.query)
     // let cityData = weatherData.find(item => {
     //     if (req.query.searchQuery.toLowerCase() == item.city_name.toLowerCase()
-            // && req.query.lat== item.lat 
-            // && req.query.lon ==  item.lon
+    // && req.query.lat== item.lat 
+    // && req.query.lon ==  item.lon
     //     )
     //         return item;
     // })
