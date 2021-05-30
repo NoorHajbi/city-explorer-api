@@ -27,14 +27,14 @@ JavaScript, HTML, CSS
 
 lab 8 
 
-Name of feature: Weather (live)
+Name of feature: Weather and Movie
 
 Estimate of time needed to complete: 3
 
 Start time: 3:00pm
 
-Finish time: 7:00am
+Finish time: not yet
 
-Actual time needed to complete: more than 6 hours
+Actual time needed to complete: not yet
 
 - **Finished After Lab review**
