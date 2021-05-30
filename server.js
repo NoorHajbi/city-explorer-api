@@ -8,8 +8,8 @@ const axios = require('axios');
 const PORT = process.env.PORT // <=> const PORT = 3001;
 const server = express();
 server.use(cors()); //  make my server opened for anyone
+const movieKey = process.env.MOVIE_API_KEY;
 const weatherHandler = require('./modules/weather.js');
-
 
 
 
@@ -24,15 +24,44 @@ server.get('/test', (req, res) => {
 })
 
 
+class Movie {
+    constructor(item) {
+        this.title = item.title;
+        this.overview = item.overview;
+        this.average_votes = item.average_votes;
+        this.total_votes = item.total_votes;
+        this.image_url = item.image_url;
+        this.popularity = item.popularity;
+        this.released_on = item.released_on;
+    }
+}
 
-// Using each data point from the static data of the city that the user searched, 
-// create an array of `Forecast` objects, one for each day.
-//  Do the necessary data wrangling to ensure the objects you create contain the information
-//   as required for correct client rendering. See the sample response.
-// Send the full array back to the client who requested data from the `weather` endpoint
 
-// http://localhost:3001/weather?searchQuery=Amman
-
+/* Start Movie Part */
+server.get('/movies', movieHandler)
+function movieHandler(req, res) {
+    const themoviedbURL = `https://api.themoviedb.org/3/search/movie?api_key=${movieKey}&query=${req.query.searchQuery}`;
+    axios
+        .get(themoviedbURL)
+        .then(result => {
+            let movietArr = []
+            movietArr.push(result.data.data.map(item => {
+                return new Movie(item);
+            }))
+            res.send(movietArr);
+        })
+        .catch(error => {
+            res.status(500).send(`error in getting the movies data ==> ${error}`);
+        }
+        )
+}
+/* Finish Movie Part */
+server.get('*', (req, res) => { // * means all, so for errors we should put it in last
+    if (res.status(400))
+        res.send('Bad Request');
+    else if (res.status(404))
+        res.send('Not Found');
+})
 server.get('/weather',weatherHandler)
 
       
@@ -44,7 +73,7 @@ server.get('/weather',weatherHandler)
     })
 
 
-    server.listen(PORT, () => {
-        console.log(`Listening on PORT ${PORT}`)
-    })
+server.listen(PORT, () => {
+    console.log(`Listening on PORT ${PORT}`)
+})
 
