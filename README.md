@@ -33,8 +33,7 @@ Estimate of time needed to complete: 3
 
 Start time: 3:00pm
 
-Finish time: not yet
-
-Actual time needed to complete: not yet
+Finish time: 8:00pm 
+Actual time needed to complete: more than 6 hours
 
 - **Finished After Lab review**
