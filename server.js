@@ -9,6 +9,7 @@ const PORT = process.env.PORT // <=> const PORT = 3001;
 const server = express();
 server.use(cors()); //  make my server opened for anyone
 const weatherHandler = require('./modules/weather.js');
+const movieHandler = require('./modules/movie.js');
 
 
 
@@ -25,11 +26,6 @@ server.get('/test', (req, res) => {
 
 
 
-// Using each data point from the static data of the city that the user searched, 
-// create an array of `Forecast` objects, one for each day.
-//  Do the necessary data wrangling to ensure the objects you create contain the information
-//   as required for correct client rendering. See the sample response.
-// Send the full array back to the client who requested data from the `weather` endpoint
 
 // http://localhost:3001/weather?searchQuery=Amman
 
