@@ -1,20 +1,30 @@
 const axios = require('axios');
 const movieKey = process.env.MOVIE_API_KEY;
-
+let cache ={};
 
 
 function movieHandler(req, res) {
-    let themoviedbURL = `https://api.themoviedb.org/3/search/movie?api_key=${movieKey}&query=${req.query.query}`;
-    axios
-        .get(themoviedbURL).then(result => {
-            let movieArr = result.data.results.map(item => {
-                return new Movie(item);
+    const movieQuery = req.query.query
+    const themoviedbURL = `https://api.themoviedb.org/3/search/movie?api_key=${movieKey}&query=${movieQuery}`;
+    if (cache[movieQuery] !== undefined) {
+        console.log('Cache hit');
+        res.send(cache[movieQuery])
+    }
+    else {
+        console.log('Cache miss');
+        axios
+            .get(themoviedbURL)
+            .then(result => {
+                let movieArr = result.data.results.map(item => {
+                    return new Movie(item);
+                })
+                cache[movieQuery] = movieArr;
+                res.status(200).send(movieArr);
             })
-            res.send(movieArr);
-        })
-        .catch(error => {
-            res.status(500).send(`error in getting the movies data ==> ${error}`);
-        })
+            .catch(error => {
+                res.status(500).send(`error in getting the movies data ==> ${error}`);
+            })
+    }
 }
 
 class Movie {

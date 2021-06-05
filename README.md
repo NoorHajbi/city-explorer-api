@@ -25,15 +25,16 @@ JavaScript, HTML, CSS
 [locationiq](https://locationiq.com/docs#search-forward-geocoding)
 [class demo](https://github.com/LTUC/amman-301d20-react/tree/master/class-07/demo)
 
-lab 9
+lab 10 
 
-Name of feature: Refactor
+Name of feature: Performance  
 
-Estimate of time needed to complete: 3
+Estimate of time needed to complete: 2hours
 
-Start time: 3:00pm
+Start time: 10:00 pm
 
-Finish time: 1:30pm 
-Actual time needed to complete: 3 hours
+Finish time: 3:30 am 
+
+Actual time needed to complete: 2 hours
 
 - **Finished After Lab review**
