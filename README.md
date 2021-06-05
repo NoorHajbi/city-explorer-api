@@ -27,14 +27,14 @@ JavaScript, HTML, CSS
 
 lab 10 
 
-Name of feature: Performance And 
+Name of feature: Performance  
 
 Estimate of time needed to complete: 2hours
 
 Start time: 10:00 pm
 
-Finish time: _____
+Finish time: 3:30 am 
 
-Actual time needed to complete: _____
+Actual time needed to complete: 2 hours
 
 - **Finished After Lab review**
